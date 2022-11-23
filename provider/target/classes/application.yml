@@ -1,0 +1,12 @@
+eureka:
+  client:
+    serviceUrl:
+      #服务注册地址
+      defaultZone: http://localhost:8888/eureka/
+server:
+  #运行端口
+  port: 8763
+spring:
+  application:
+    #服务注册名称
+    name: service-provider
