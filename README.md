@@ -26,3 +26,9 @@ https://juejin.cn/post/7097221123040870407
 maven常用标签
 
 https://juejin.cn/post/7097633607946076197
+
+archetypeCatalog=internal报错，解决方法
+
+Settings---Build---Maven---Runner----VM Options的设置改为
+
+-DarchetypeCatalog=internal
