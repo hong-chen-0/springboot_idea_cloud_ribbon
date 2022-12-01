@@ -14,7 +14,7 @@ public class TestController {
 
     @RequestMapping("getName")
     public String getName(){
-        return "SpringCloud!";
+        return "8763端口provider启动";
     }
 }
 

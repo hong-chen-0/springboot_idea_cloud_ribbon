@@ -22,7 +22,7 @@ public class ConsumerController {
      */
     @RequestMapping("getName")
     public String getName(){
-        return consumerService.getName();
+        return consumerService.getName() + "----已抵达8764端口consumer";
     }
 }
 
