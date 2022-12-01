@@ -1,5 +1,6 @@
 package com.example.consumer.service;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.stereotype.Service;
@@ -17,10 +18,15 @@ public class ConsumerService {
     @Autowired
     private RestTemplate restTemplate;
 
+    @HystrixCommand(fallbackMethod = "consumerError" )
     public String getName() {
         //调用子模块接口地址
         String name = restTemplate.getForObject("http://service-provider/test/getName", String.class);
         return name;
+    }
+
+    public String consumerError() {
+        return "sorry,this is ribbon hystrix  error";
     }
 }
 
