@@ -33,7 +33,7 @@ https://blog.csdn.net/weixin_44009447/article/details/108273295
 
 9. consumer子模块启动类加入@LoadBalanced
 
-------------------------------------------------
+---------------------------------------
 
 ⭐Ribbon负载均衡和Hystrix熔断器：
 
@@ -45,6 +45,7 @@ https://blog.csdn.net/lhmyy521125/article/details/102657359
 
 3. consumer子模块service类加入@HystrixCommand(fallbackMethod = "xxx" )注解，并创建xxx方法，编辑报错时返回的内容
 
+---------------------------------------
 
 注意：
 
