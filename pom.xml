@@ -12,6 +12,7 @@
     <modules>
         <module>provider</module>
         <module>consumer</module>
+        <module>eureka_server</module>
     </modules>
 
     <name>主程序</name>
