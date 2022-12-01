@@ -3,13 +3,13 @@
 
 ⭐项目结构：
 
-springboot_idea_cloud: 项目名
+---springboot_idea_cloud: 项目名
 
-eureka_server：服务注册与发现子模块()
+---eureka_server：服务注册与发现子模块()
 
-provider：服务提供子模块()
+---provider：服务提供子模块()
 
-consumer：服务消费子模块()
+---consumer：服务消费子模块()
 
 ⭐基础配置+Eureka：
 
