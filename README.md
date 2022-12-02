@@ -1,17 +1,51 @@
 # springboot_idea_cloud
 微服务标准范例（IDEA构建）
 
-参考教程
+⭐项目结构：
+
+---springboot_idea_cloud: 项目名
+
+---eureka_server：服务注册与发现子模块()
+
+---provider：服务提供子模块()
+
+---consumer：服务消费子模块()
+
+⭐基础配置+Eureka：
 
 https://blog.csdn.net/weixin_44009447/article/details/108273295
 
-springboot_idea_cloud: 项目名
+1. 创建project-maven，项目名springboot_idea_cloud，删除src，只留.idea、pom、iml
 
-eureka_server：服务注册与发现子模块
+2. 创建module-spring assistant，项目名eureka_server，java8，勾选Eureka Server
 
-provider：服务提供子模块
+3. 创建module-spring assistant，项目名provider，java8，勾选Eureka Discovery Client
 
-consumer：服务消费子模块
+4. 创建module-spring assistant，项目名consumer，java8，勾选Eureka Discovery Client
+
+5. eureka-server子模块加上@EnableEurekaServer注解，声明为注册中心
+
+6. provider子模块加上@EnableEurekaClient注解，声明为注册服务
+
+7. consumer子模块加上@EnableEurekaClient注解，声明为注册服务；
+
+8. consumer子模块service类使用RestTemplate调用注册子模块接口方法
+
+9. consumer子模块启动类加入@LoadBalanced
+
+---------------------------------------
+
+⭐Ribbon负载均衡和Hystrix熔断器：
+
+https://blog.csdn.net/lhmyy521125/article/details/102657359
+
+1. consumer子模块pom加上spring-cloud-starter-netflix-hystrix的起步依赖
+
+2. consumer子模块启动类加入@EnableHystrix 开启熔断器
+
+3. consumer子模块service类加入@HystrixCommand(fallbackMethod = "xxx" )注解，并创建xxx方法，编辑报错时返回的内容
+
+---------------------------------------
 
 注意：
 
