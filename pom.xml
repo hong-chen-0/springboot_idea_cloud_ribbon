@@ -13,6 +13,7 @@
         <module>provider</module>
         <module>consumer</module>
         <module>eureka_server</module>
+        <module>zuul</module>
     </modules>
 
     <name>主程序</name>

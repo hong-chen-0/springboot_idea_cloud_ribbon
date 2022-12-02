@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: zuul
+
+server:
+  port: 8899
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8888/eureka/
+
+#无需特别配置，zuul会自动发现注册在注册中心的所有服务
+#http://localhost:8899/service-provider/test/getName 进行访问
+#zuul:
+#  routes:
+#    provider: #自定义名称
+#      path: /provider/** # 自定义的路由
+#      serviceId: service-provider
