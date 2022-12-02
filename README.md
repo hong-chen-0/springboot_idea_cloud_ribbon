@@ -11,17 +11,19 @@
 
 ---consumer：服务消费子模块()
 
+---zuul：服务消费子模块()
+
 ⭐基础配置+Eureka：
 
 https://blog.csdn.net/weixin_44009447/article/details/108273295
 
-1. 创建project-maven，项目名springboot_idea_cloud，删除src，只留.idea、pom、iml
+1. 创建project-maven，项目名springboot_idea_cloud，删除src，只留.idea、pom、iml，pom建立子模块关联
 
-2. 创建module-spring assistant，项目名eureka_server，java8，勾选Eureka Server
+2. 创建module-spring assistant，项目名eureka_server，java8，勾选Eureka Server，pom建立父模块关联
 
-3. 创建module-spring assistant，项目名provider，java8，勾选Eureka Discovery Client
+3. 创建module-spring assistant，项目名provider，java8，勾选Eureka Discovery Client，pom建立父模块关联
 
-4. 创建module-spring assistant，项目名consumer，java8，勾选Eureka Discovery Client
+4. 创建module-spring assistant，项目名consumer，java8，勾选Eureka Discovery Client，pom建立父模块关联
 
 5. eureka-server子模块加上@EnableEurekaServer注解，声明为注册中心
 
@@ -46,6 +48,16 @@ https://blog.csdn.net/lhmyy521125/article/details/102657359
 3. consumer子模块service类加入@HystrixCommand(fallbackMethod = "xxx" )注解，并创建xxx方法，编辑报错时返回的内容
 
 ---------------------------------------
+
+⭐Zuul微服务网关
+
+http://www.ityouknow.com/springcloud/2017/06/01/gateway-service-zuul.html
+
+1. 创建module-spring assistant，项目名zuul，java8，勾选Eureka Discovery Client，pom建立父模块关联
+
+2. zuul子模块pom添加zuul依赖，yml配置模块名、端口、eureka，无需特别配置zuul，zuul会自动发现注册在注册中心的所有服务
+
+3. http://localhost:8899/service-provider/test/getName 进行访问
 
 注意：
 
